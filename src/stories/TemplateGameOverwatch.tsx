@@ -1,25 +1,26 @@
 import React, { FC } from 'react';
-import { UserDisplayName } from './components/atoms/UserDisplayName';
-import { LatestFollower } from './components/atoms/LatestFollower';
-import { TwitchProvider } from './components/TwitchProvider';
-import { TwitchWrapper } from './template/TwitchWrapper';
+import './button.css';
+import { TwitchProvider } from '../components/TwitchProvider';
+import { TwitchWrapper } from '../template/TwitchWrapper';
 import {
   OverwatchCamera,
   OverwatchUltimate,
   OverwatchUltimateFollowersGoal,
   OverwatchUltimateSubscriberGoal,
-} from './components/templates/games/Overwatch';
-import { LatestSubscriber } from './components/atoms/LatestSubscriber';
-import { faTwitch, faTwitter } from '@fortawesome/free-brands-svg-icons';
+} from '../components/templates/games/Overwatch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitch, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { UserDisplayName } from '../components/atoms/UserDisplayName';
 import {
   faCrown,
   faTicketAlt,
   faUserFriends,
   faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
+import { LatestFollower } from '../components/atoms/LatestFollower';
+import { LatestSubscriber } from '../components/atoms/LatestSubscriber';
 
-const App: FC = () => {
+export const TemplateGameOverwatchStory: FC = () => {
   return (
     <TwitchProvider>
       <TwitchWrapper streamWidth={'1920px'} streamHeight={'1080px'}>
@@ -70,5 +71,3 @@ const App: FC = () => {
     </TwitchProvider>
   );
 };
-
-export default App;

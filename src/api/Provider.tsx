@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useReducer } from 'react';
+import React, { FC, useCallback, useEffect, useMemo, useReducer } from 'react';
 import { TwitchAPIContext } from './context';
 import { getHTTPClient } from './helpers';
 import { apiRequestReducer } from './reducer';
@@ -77,6 +77,7 @@ export const TwitchAPIProvider: FC<{ accessToken: string }> = ({
             },
           });
         } catch (e) {
+          debugger;
           apiRequestDispatch({
             type: ApiRequestActionTypes.SET,
             payload: {
