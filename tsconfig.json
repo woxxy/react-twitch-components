@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "outDir": "./lib",
     "target": "es5",
     "lib": [
       "dom",
@@ -17,14 +16,16 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
     "noImplicitAny": true,
     "downlevelIteration": true,
     "importHelpers": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "lib"
   },
-  "include": [
-    "src"
+  "files": [
+    "src/index.tsx"
   ]
 }
