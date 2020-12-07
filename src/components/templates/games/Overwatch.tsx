@@ -3,6 +3,13 @@ import React, { FC, ReactNode } from 'react';
 import { FollowerGoal } from '../../molecules/FollowerGoal';
 import { css } from '@emotion/css';
 import { SubscriberGoal } from '../../molecules/SubscriberGoal';
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Teko:600'],
+  },
+});
 
 export const UltimateWrapperTemplate = styled.div`
   width: 600px;
