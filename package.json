@@ -69,7 +69,9 @@
   "scripts": {
     "build": "rollup --config & tsc",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "eslint": "eslint --ext ts,tsx --max-warnings 0 -f codeframe --cache --color src",
+    "typecheck": "tsc"
   },
   "eslintConfig": {
     "extends": [
