@@ -6,13 +6,12 @@ const extensions = ['.ts', '.tsx'];
 export default {
   input: 'src/index.tsx',
   output: {
-    file: 'lib/bundle.js',
+    file: 'lib/index.js',
     format: 'es',
     sourcemap: true,
   },
   plugins: [
     babel({
-      babelHelpers: 'runtime',
       extensions,
     }),
     nodeResolve({ extensions }),

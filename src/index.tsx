@@ -1,17 +1,7 @@
-import atoms from './components/atoms';
-import molecules from './components/molecules';
-import { TwitchProvider } from './components/TwitchProvider';
-import {
+export * from './components/atoms';
+export * from './components/molecules';
+export { TwitchProvider } from './components/TwitchProvider';
+export {
   OverwatchCamera,
   OverwatchUltimate,
 } from './components/templates/games/Overwatch';
-
-const index = {
-  TwitchProvider,
-  ...atoms,
-  ...molecules,
-  OverwatchUltimate,
-  OverwatchCamera,
-};
-
-module.exports = index;

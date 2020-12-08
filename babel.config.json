@@ -11,11 +11,8 @@
         "@babel/proposal-optional-chaining"
       ]
     }],
-    ["@babel/react", { "runtime": "automatic" }],
+    "@babel/preset-react",
     "@babel/typescript"
   ],
-  "plugins": [
-    ["@babel/transform-runtime", { "useESModules": true }],
-    "babel-plugin-optimize-clsx"
-  ]
+  "plugins": []
 }

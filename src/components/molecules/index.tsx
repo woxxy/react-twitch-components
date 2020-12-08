@@ -1,4 +1,2 @@
-import { FollowerGoal } from './FollowerGoal';
-import { SubscriberGoal } from './SubscriberGoal';
-
-export default { FollowerGoal, SubscriberGoal };
+export { FollowerGoal } from './FollowerGoal';
+export { SubscriberGoal } from './SubscriberGoal';
