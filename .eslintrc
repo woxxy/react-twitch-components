@@ -1,5 +1,6 @@
 {
   "root": true,
+  "reportUnusedDisableDirectives": true,
   "extends": [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
