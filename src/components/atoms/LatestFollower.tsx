@@ -1,10 +1,11 @@
-import { FC } from 'react';
 import { useTwitchApi } from '../../hooks/useTwitchApi';
 import { TwitchUsersFollowsResponse } from '../../interfaces';
 import { useTwitchCurrentUser } from '../../hooks/useTwitchCurrentUser';
 
-export const LatestFollower: FC<{ indexFromLatest?: number }> = ({
+export const LatestFollower = ({
   indexFromLatest = 0,
+}: {
+  indexFromLatest?: number;
 }) => {
   const { currentUser } = useTwitchCurrentUser();
 

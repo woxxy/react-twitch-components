@@ -25,6 +25,18 @@
         ]
       }
     ],
+    "@typescript-eslint/ban-types": [
+      1,
+      {
+        "extendDefaults": true,
+        "types": {
+          "React.FC": true,
+          "FC": true,
+          "FunctionComponent": true
+        }
+      }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": 0,
     "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 1,
     "react/jsx-uses-react": 0,

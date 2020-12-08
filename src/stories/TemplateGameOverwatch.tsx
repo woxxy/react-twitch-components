@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import './button.css';
 import { TwitchProvider } from '../components/TwitchProvider';
 import { TwitchWrapper } from '../template/TwitchWrapper';
@@ -20,7 +19,7 @@ import {
 import { LatestFollower } from '../components/atoms/LatestFollower';
 import { LatestSubscriber } from '../components/atoms/LatestSubscriber';
 
-export const TemplateGameOverwatchStory: FC = () => {
+export const TemplateGameOverwatchStory = () => {
   return (
     <TwitchProvider>
       <TwitchWrapper streamWidth={'1920px'} streamHeight={'1080px'}>

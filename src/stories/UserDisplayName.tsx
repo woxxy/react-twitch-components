@@ -1,7 +1,7 @@
 import { TwitchProvider } from '../components/TwitchProvider';
 import { UserDisplayName } from '../components/atoms/UserDisplayName';
 
-export const UserDisplayNameStory: React.FC = () => {
+export const UserDisplayNameStory = () => {
   return (
     <TwitchProvider>
       <UserDisplayName />

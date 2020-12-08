@@ -9,7 +9,7 @@ I am [@WoxxyTheFool on Twitch](https://twitch.tv/woxxythefool) and I stream codi
 # Quick Example
 
 ```tsx
-const App: FC = () => {
+const App = () => {
   return (
     <TwitchProvider>
       <UserDisplayName /> has <FollowerCount /> followers.

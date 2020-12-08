@@ -1,8 +1,7 @@
 import { useContext } from 'react';
 import { TwitchCurrentUserContext } from '../currentUser/context';
-import { TwitchCurrentUserProps } from '../currentUser/interfaces';
 
-export const useTwitchCurrentUser = (): TwitchCurrentUserProps => {
+export const useTwitchCurrentUser = () => {
   const context = useContext(TwitchCurrentUserContext);
 
   if (context === undefined) {

@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { css, cx } from '@emotion/css';
 
 const progressBarStyles = css`
@@ -26,11 +25,13 @@ export interface LoadingBarClassNames {
   progressBarEmpty?: string;
 }
 
-export const LoadingBar: FC<{
+interface LoadingBarProps {
   count: number;
   goal: number;
   classNames?: LoadingBarClassNames;
-}> = ({ count, goal, classNames }) => {
+}
+
+export const LoadingBar = ({ count, goal, classNames }: LoadingBarProps) => {
   const progressBarFilledStyles = css`
     width: ${Math.min((count * 100) / goal, 100)}%;
     height: 100%;

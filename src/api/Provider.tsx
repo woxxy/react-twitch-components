@@ -1,14 +1,19 @@
-import { FC, useCallback, useEffect, useReducer } from 'react';
+import { useCallback, useEffect, useReducer } from 'react';
 import { TwitchAPIContext } from './context';
 import { getHTTPClient } from './helpers';
 import { apiRequestReducer } from './reducer';
 import { TWITCH_API_ENDPOINT } from '../constants';
 import { ApiRequestActionTypes } from './interfaces';
 
-export const TwitchAPIProvider: FC<{ accessToken: string }> = ({
+interface TwitchAPIProviderProps {
+  accessToken: string;
+  children: React.ReactNode;
+}
+
+export const TwitchAPIProvider = ({
   accessToken,
   children,
-}) => {
+}: TwitchAPIProviderProps) => {
   const [apiRequestState, apiRequestDispatch] = useReducer(apiRequestReducer, {
     requests: {},
   });

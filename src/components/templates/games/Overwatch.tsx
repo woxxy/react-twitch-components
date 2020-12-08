@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { FollowerGoal } from '../../molecules/FollowerGoal';
 import { css } from '@emotion/css';
 import { SubscriberGoal } from '../../molecules/SubscriberGoal';
@@ -130,10 +130,15 @@ export interface OverwatchUltimateElements {
   icon?: ReactNode;
 }
 
-export const UltimateDetail: FC<{
+interface UltimateDetailProps {
   elements: OverwatchUltimateElements;
   align?: 'right' | 'left';
-}> = ({ elements, align = 'left' }) => {
+}
+
+export const UltimateDetail = ({
+  elements,
+  align = 'left',
+}: UltimateDetailProps) => {
   return (
     <>
       <UltimateSideTitle align={align}>
@@ -153,12 +158,19 @@ export const UltimateDetail: FC<{
   );
 };
 
-export const OverwatchUltimate: FC<{
+interface OverwatchUltimateProps {
   upperLeft?: OverwatchUltimateElements[];
   upperRight?: OverwatchUltimateElements[];
   left?: OverwatchUltimateElements[];
   right?: OverwatchUltimateElements[];
-}> = ({ upperLeft, upperRight, left, right }) => {
+}
+
+export const OverwatchUltimate = ({
+  upperLeft,
+  upperRight,
+  left,
+  right,
+}: OverwatchUltimateProps) => {
   return (
     <>
       <UltimateWrapperTemplate>
@@ -192,9 +204,9 @@ export const OverwatchUltimate: FC<{
   );
 };
 
-export const OverwatchUltimateFollowersGoal: FC<
-  React.ComponentProps<typeof FollowerGoal>
-> = props => {
+export const OverwatchUltimateFollowersGoal = (
+  props: React.ComponentProps<typeof FollowerGoal>
+) => {
   return (
     <UltimateLoadingBarWrapper>
       <FollowerGoal {...props} classNames={progressBarClassNames} />
@@ -202,9 +214,9 @@ export const OverwatchUltimateFollowersGoal: FC<
   );
 };
 
-export const OverwatchUltimateSubscriberGoal: FC<
-  React.ComponentProps<typeof SubscriberGoal>
-> = props => {
+export const OverwatchUltimateSubscriberGoal = (
+  props: React.ComponentProps<typeof SubscriberGoal>
+) => {
   return (
     <UltimateLoadingBarWrapper>
       <SubscriberGoal {...props} classNames={progressBarClassNames} />
@@ -235,7 +247,7 @@ const CameraFrame = styled.div`
   border-radius: 7px;
 `;
 
-export const OverwatchCamera: FC = ({ children }) => {
+export const OverwatchCamera = ({ children }: { children: ReactNode }) => {
   return (
     <CameraWrapper>
       <CameraUsername>{children}</CameraUsername>

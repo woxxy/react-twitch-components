@@ -1,7 +1,6 @@
-import { FC } from 'react';
 import { useTwitchCurrentUser } from '../../hooks/useTwitchCurrentUser';
 
-export const UserDisplayName: FC = () => {
+export const UserDisplayName = () => {
   const { currentUser } = useTwitchCurrentUser();
   return <>{currentUser.displayName}</>;
 };

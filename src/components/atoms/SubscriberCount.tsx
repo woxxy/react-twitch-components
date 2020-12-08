@@ -1,9 +1,8 @@
-import { FC } from 'react';
 import { useTwitchApi } from '../../hooks/useTwitchApi';
 import { TwitchBroadcasterSubscriptionsResponse } from '../../interfaces';
 import { useTwitchCurrentUser } from '../../hooks/useTwitchCurrentUser';
 
-export const SubscriberCount: FC = () => {
+export const SubscriberCount = () => {
   const { currentUser } = useTwitchCurrentUser();
 
   const [, result] = useTwitchApi<TwitchBroadcasterSubscriptionsResponse>(
