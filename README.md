@@ -21,6 +21,7 @@ export default App;
 ```
 
 # Goals
+
 - Create the building blocks to display static and dynamic Twitch information in a stream
 - Provide a set of hooks and providers that simplify the fetching and updating of information
 - Allow for intricate automation in order to bring new experiences to the viewers
