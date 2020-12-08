@@ -27,8 +27,13 @@ export default App;
 
 ## Usage
 
-This part will be included after the library is published.
+- Prepare your React env (16.8+), in example with Create React App
+- `npm install react-twitch-components`
+- Wrap your components with `<TwitchProvider>`
+- Use the components from this library within the provider.
 
-## Development
+To see the available components, look into `src/components` or look into the styleguide.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Running the styleguide
+
+`npm run storybook` and then go to localhost:6006
