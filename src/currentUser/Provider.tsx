@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { TwitchUsersResponse } from '../interfaces';
 import { TwitchCurrentUserContext } from './context';
 import { useTwitchApi } from '../hooks/useTwitchApi';

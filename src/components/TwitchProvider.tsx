@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { redirectForToken } from '../api/helpers';
 import { TwitchAPIProvider } from '../api/Provider';
 import { TwitchCurrentUserProvider } from '../currentUser/Provider';

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { css, cx } from '@emotion/css';
 
 const progressBarStyles = css`

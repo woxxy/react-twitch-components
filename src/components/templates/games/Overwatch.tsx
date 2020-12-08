@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React, { FC, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import { FollowerGoal } from '../../molecules/FollowerGoal';
 import { css } from '@emotion/css';
 import { SubscriberGoal } from '../../molecules/SubscriberGoal';

@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useReducer } from 'react';
+import { FC, useCallback, useEffect, useReducer } from 'react';
 import { TwitchAPIContext } from './context';
 import { getHTTPClient } from './helpers';
 import { apiRequestReducer } from './reducer';

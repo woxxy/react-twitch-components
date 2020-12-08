@@ -1,4 +1,4 @@
-import React, { ComponentProps, FC } from 'react';
+import { ComponentProps, FC } from 'react';
 import './button.css';
 import { TwitchProvider } from '../components/TwitchProvider';
 import { FollowerGoal } from '../components/molecules/FollowerGoal';
