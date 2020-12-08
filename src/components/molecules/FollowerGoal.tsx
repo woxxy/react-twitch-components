@@ -1,6 +1,4 @@
-import { useTwitchApi } from '../../hooks/useTwitchApi';
-import { TwitchUsersFollowsResponse } from '../../interfaces';
-import { useTwitchCurrentUser } from '../../hooks/useTwitchCurrentUser';
+import { useTwitchFollowers } from '../../hooks/twitch';
 import { LoadingBarClassNames, LoadingBar } from './internal/LoadingBar';
 
 interface FollowerGoalProps {
@@ -9,19 +7,11 @@ interface FollowerGoalProps {
 }
 
 export const FollowerGoal = ({ goal, classNames }: FollowerGoalProps) => {
-  const { currentUser } = useTwitchCurrentUser();
+  const { data } = useTwitchFollowers();
 
-  const [, result] = useTwitchApi<TwitchUsersFollowsResponse>(
-    'users/follows',
-    { toId: currentUser.id },
-    [currentUser]
-  );
-
-  if (!result) {
+  if (data == null) {
     return null;
   }
 
-  return (
-    <LoadingBar goal={goal} count={result.total} classNames={classNames} />
-  );
+  return <LoadingBar goal={goal} count={data.total} classNames={classNames} />;
 };
