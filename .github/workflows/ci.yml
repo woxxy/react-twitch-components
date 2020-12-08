@@ -5,13 +5,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '15.x'
-    - name: npm install
-      run: npm i
-    - name: ESLint
-      run: npm run eslint
-    - name: Typecheck
-      run: npm run typecheck
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '15.x'
+      - name: npm install
+        run: npm i
+      - name: ESLint
+        run: npm run eslint
+      - name: Typecheck
+        run: npm run typecheck

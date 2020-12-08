@@ -6,22 +6,25 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "react-hooks"
-  ],
+  "plugins": ["@typescript-eslint", "react-hooks"],
   "rules": {
-    "no-restricted-imports": [1, {
-      "paths": [{
-        "name": "react",
-        "importNames": ["default"],
-        "message": "Use named imports instead."
-      }, {
-        "name": "react-dom",
-        "importNames": ["default"],
-        "message": "Use named imports instead."
-      }]
-    }],
+    "no-restricted-imports": [
+      1,
+      {
+        "paths": [
+          {
+            "name": "react",
+            "importNames": ["default"],
+            "message": "Use named imports instead."
+          },
+          {
+            "name": "react-dom",
+            "importNames": ["default"],
+            "message": "Use named imports instead."
+          }
+        ]
+      }
+    ],
     "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 1,
     "react/jsx-uses-react": 0,

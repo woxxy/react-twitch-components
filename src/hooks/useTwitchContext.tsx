@@ -6,8 +6,8 @@ export const useTwitchContext = (): TwitchAPIContextProps => {
   const context = useContext(TwitchAPIContext);
 
   if (context === undefined) {
-    throw new Error('useTwitchContext must be used within a TwitchProvider')
+    throw new Error('useTwitchContext must be used within a TwitchProvider');
   }
 
   return context;
-}
+};
