@@ -29,7 +29,9 @@ const useTwitchApi = <T extends TwitchResponses>(path: string | null) => {
     'client-id': clientId,
     Authorization: `Bearer ${accessToken}`,
   };
-  return useSWR<T>(url, url => twitchApiFetcher(url, headers));
+  return useSWR<T>(url, url => twitchApiFetcher(url, headers), {
+    refreshInterval: 10000,
+  });
 };
 
 export const useTwitchUsers = () => {
