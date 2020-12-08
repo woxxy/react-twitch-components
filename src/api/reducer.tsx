@@ -23,7 +23,7 @@ export const apiRequestReducer = (
     case ApiRequestActionTypes.UPDATE_EXPIRED:
       return produce(state, draftState => {
         const currentTime = new Date().getTime();
-        Object.entries(draftState.requests).forEach(([_, request]) => {
+        Object.entries(draftState.requests).forEach(([, request]) => {
           if (
             request.expirationTime &&
             request.status === 'fetched' &&
