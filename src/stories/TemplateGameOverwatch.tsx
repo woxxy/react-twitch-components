@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import './button.css';
 import { TwitchProvider } from '../components/TwitchProvider';
 import { TwitchWrapper } from '../template/TwitchWrapper';

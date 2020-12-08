@@ -1,4 +1,3 @@
-import React from 'react';
 import { TwitchProvider } from '../components/TwitchProvider';
 import { UserDisplayName } from '../components/atoms/UserDisplayName';
 
