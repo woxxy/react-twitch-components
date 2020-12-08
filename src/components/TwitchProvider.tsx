@@ -1,6 +1,7 @@
 import { redirectForToken } from '../api/helpers';
-import { TwitchAPIProvider } from '../api/Provider';
-import { TwitchCurrentUserProvider } from '../currentUser/Provider';
+import { TwitchContext } from './TwitchContext';
+
+const clientId = '9031tpad4quocef3dgtu0bbnbupmdr';
 
 export const TwitchProvider = ({ children }: { children: React.ReactNode }) => {
   const hashParams = new URLSearchParams(document.location.hash.substr(1));
@@ -12,8 +13,13 @@ export const TwitchProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <TwitchAPIProvider accessToken={accessToken}>
-      <TwitchCurrentUserProvider>{children}</TwitchCurrentUserProvider>
-    </TwitchAPIProvider>
+    <TwitchContext.Provider
+      value={{
+        accessToken,
+        clientId,
+      }}
+    >
+      {children}
+    </TwitchContext.Provider>
   );
 };

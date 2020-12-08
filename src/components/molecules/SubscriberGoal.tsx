@@ -1,6 +1,4 @@
-import { useTwitchApi } from '../../hooks/useTwitchApi';
-import { TwitchBroadcasterSubscriptionsResponse } from '../../interfaces';
-import { useTwitchCurrentUser } from '../../hooks/useTwitchCurrentUser';
+import { useTwitchSubscriptions } from '../../hooks/twitch';
 import { LoadingBarClassNames, LoadingBar } from './internal/LoadingBar';
 
 interface SubscriberGoalProps {
@@ -9,23 +7,13 @@ interface SubscriberGoalProps {
 }
 
 export const SubscriberGoal = ({ goal, classNames }: SubscriberGoalProps) => {
-  const { currentUser } = useTwitchCurrentUser();
+  const { data } = useTwitchSubscriptions();
 
-  const [, result] = useTwitchApi<TwitchBroadcasterSubscriptionsResponse>(
-    'subscriptions',
-    { broadcasterId: currentUser.id },
-    [currentUser]
-  );
-
-  if (!result) {
+  if (data == null) {
     return null;
   }
 
   return (
-    <LoadingBar
-      goal={goal}
-      count={result.data.length}
-      classNames={classNames}
-    />
+    <LoadingBar goal={goal} count={data.data.length} classNames={classNames} />
   );
 };

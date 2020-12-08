@@ -1,23 +1,12 @@
-import { useTwitchApi } from '../../hooks/useTwitchApi';
-import { TwitchUsersFollowsResponse } from '../../interfaces';
-import { useTwitchCurrentUser } from '../../hooks/useTwitchCurrentUser';
+import { useTwitchFollowers } from '../../hooks/twitch';
+
+interface LatestFollowerProps {
+  indexFromLatest?: number;
+}
 
 export const LatestFollower = ({
   indexFromLatest = 0,
-}: {
-  indexFromLatest?: number;
-}) => {
-  const { currentUser } = useTwitchCurrentUser();
-
-  const [, result] = useTwitchApi<TwitchUsersFollowsResponse>(
-    'users/follows',
-    { toId: currentUser.id },
-    [currentUser]
-  );
-
-  if (!result) {
-    return null;
-  }
-
-  return <>{result.data[indexFromLatest].fromName}</>;
+}: LatestFollowerProps) => {
+  const { data } = useTwitchFollowers();
+  return <>{data?.data[indexFromLatest]?.from_name}</>;
 };
