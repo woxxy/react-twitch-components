@@ -1,11 +1,14 @@
 import { createContext, useContext } from 'react';
 
-// TODO: what should be stored in the context?
-// maybe auth token/client id/other auth stuff?
-// https://dev.twitch.tv/docs/api
-type TwitchContextValue = undefined;
+// TODO: what else should be stored in the context?
+interface TwitchContextValue {
+  accessToken: string;
+  clientId: string;
+}
 
-export const TwitchContext = createContext<TwitchContextValue>(undefined);
+export const TwitchContext = createContext<TwitchContextValue | undefined>(
+  undefined
+);
 
 export const useTwitchContext = () => {
   const context = useContext(TwitchContext);
