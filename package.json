@@ -62,15 +62,15 @@
     "rollup": "^2.34.2"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react": "^16.14 || ^17.0",
+    "react-dom": "^16.14 || ^17.0"
   },
   "scripts": {
     "build": "rollup --config & tsc",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "eslint": "eslint --ext ts,tsx --max-warnings 0 -f codeframe --cache --color src",
-    "typecheck": "tsc"
+    "typecheck": "tsc -p tsconfig.all.json"
   },
   "browserslist": {
     "production": [

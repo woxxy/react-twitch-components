@@ -1,3 +1,4 @@
+import { isAbsolute } from 'path';
 import { babel } from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
 
@@ -8,22 +9,15 @@ export default {
   output: {
     file: 'lib/index.js',
     format: 'es',
+    preferConst: true,
     sourcemap: true,
   },
   plugins: [
     babel({
-      extensions,
+      babelHelpers: 'runtime',
+      extensions
     }),
     nodeResolve({ extensions }),
   ],
-  external: [
-    'react',
-    'react/jsx-runtime',
-    '@emotion/css',
-    '@emotion/styled',
-    'axios',
-    'axios-case-converter',
-    'immer',
-    'webfontloader',
-  ],
+  external: id => !id.startsWith('.') && !isAbsolute(id),
 };
