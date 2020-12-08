@@ -1,9 +1,12 @@
-import { FC } from 'react';
 import { TwitchUsersResponse } from '../interfaces';
 import { TwitchCurrentUserContext } from './context';
 import { useTwitchApi } from '../hooks/useTwitchApi';
 
-export const TwitchCurrentUserProvider: FC = ({ children }) => {
+export const TwitchCurrentUserProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [, result] = useTwitchApi<TwitchUsersResponse>('users', {}, [], null);
 
   if (!result) {

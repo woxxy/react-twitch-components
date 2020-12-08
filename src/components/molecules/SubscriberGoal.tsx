@@ -1,13 +1,14 @@
-import { FC } from 'react';
 import { useTwitchApi } from '../../hooks/useTwitchApi';
 import { TwitchBroadcasterSubscriptionsResponse } from '../../interfaces';
 import { useTwitchCurrentUser } from '../../hooks/useTwitchCurrentUser';
 import { LoadingBarClassNames, LoadingBar } from './internal/LoadingBar';
 
-export const SubscriberGoal: FC<{
+interface SubscriberGoalProps {
   goal: number;
   classNames?: LoadingBarClassNames;
-}> = ({ goal, classNames }) => {
+}
+
+export const SubscriberGoal = ({ goal, classNames }: SubscriberGoalProps) => {
   const { currentUser } = useTwitchCurrentUser();
 
   const [, result] = useTwitchApi<TwitchBroadcasterSubscriptionsResponse>(

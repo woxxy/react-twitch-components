@@ -1,13 +1,14 @@
-import { FC } from 'react';
 import { useTwitchApi } from '../../hooks/useTwitchApi';
 import { TwitchUsersFollowsResponse } from '../../interfaces';
 import { useTwitchCurrentUser } from '../../hooks/useTwitchCurrentUser';
 import { LoadingBarClassNames, LoadingBar } from './internal/LoadingBar';
 
-export const FollowerGoal: FC<{
+interface FollowerGoalProps {
   goal: number;
   classNames?: LoadingBarClassNames;
-}> = ({ goal, classNames }) => {
+}
+
+export const FollowerGoal = ({ goal, classNames }: FollowerGoalProps) => {
   const { currentUser } = useTwitchCurrentUser();
 
   const [, result] = useTwitchApi<TwitchUsersFollowsResponse>(

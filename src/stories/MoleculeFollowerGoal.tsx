@@ -1,11 +1,11 @@
-import { ComponentProps, FC } from 'react';
+import { ComponentProps } from 'react';
 import './button.css';
 import { TwitchProvider } from '../components/TwitchProvider';
 import { FollowerGoal } from '../components/molecules/FollowerGoal';
 
-export const MoleculeFollowerGoalStory: FC<
-  ComponentProps<typeof FollowerGoal>
-> = props => {
+export const MoleculeFollowerGoalStory = (
+  props: ComponentProps<typeof FollowerGoal>
+) => {
   return (
     <TwitchProvider>
       <FollowerGoal {...props} />

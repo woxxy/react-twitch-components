@@ -1,8 +1,7 @@
 import { useContext } from 'react';
 import { TwitchAPIContext } from '../api/context';
-import { TwitchAPIContextProps } from '../api/interfaces';
 
-export const useTwitchContext = (): TwitchAPIContextProps => {
+export const useTwitchContext = () => {
   const context = useContext(TwitchAPIContext);
 
   if (context === undefined) {
