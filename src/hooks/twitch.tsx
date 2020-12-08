@@ -27,8 +27,11 @@ const twitchApiFetcher = async <T extends TwitchResponses>(
   return response.json();
 };
 
-const useTwitchApi = <T extends TwitchResponses>(path: string) => {
-  const url = accessToken === null ? null : `${TWITCH_API_ENDPOINT}${path}`;
+const useTwitchApi = <T extends TwitchResponses>(path: string | null) => {
+  const url =
+    accessToken === null || path === null
+      ? null
+      : `${TWITCH_API_ENDPOINT}${path}`;
   return useSWR<T>(url, twitchApiFetcher);
 };
 
@@ -36,16 +39,27 @@ export const useTwitchUsers = () => {
   return useTwitchApi<TwitchUsersResponse>('users');
 };
 
+export const useTwitchCurrentUser = () => {
+  const { data } = useTwitchUsers();
+  return data?.data[0];
+};
+
 export const useTwitchFollowers = () => {
-  // TODO: use context to get to_id?
-  const params = new URLSearchParams({ to_id: '123' });
-  return useTwitchApi<TwitchUsersFollowsResponse>(`users/follows?${params}`);
+  const currentUser = useTwitchCurrentUser();
+  let path = null;
+  if (currentUser != null) {
+    const params = new URLSearchParams({ to_id: currentUser.id });
+    path = `users/follows?${params}`;
+  }
+  return useTwitchApi<TwitchUsersFollowsResponse>(path);
 };
 
 export const useTwitchSubscriptions = () => {
-  // TODO: use context to get broadcaster_id?
-  const params = new URLSearchParams({ broadcaster_id: '123' });
-  return useTwitchApi<TwitchBroadcasterSubscriptionsResponse>(
-    `subscriptions?${params}`
-  );
+  const currentUser = useTwitchCurrentUser();
+  let path = null;
+  if (currentUser != null) {
+    const params = new URLSearchParams({ broadcaster_id: currentUser.id });
+    path = `subscriptions?${params}`;
+  }
+  return useTwitchApi<TwitchBroadcasterSubscriptionsResponse>(path);
 };
