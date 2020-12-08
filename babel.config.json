@@ -11,8 +11,10 @@
         "@babel/proposal-optional-chaining"
       ]
     }],
-    "@babel/preset-react",
+    ["@babel/react", { "runtime": "automatic" }],
     "@babel/typescript"
   ],
-  "plugins": []
+  "plugins": [
+    ["@babel/transform-runtime", { "useESModules": true }]
+  ]
 }
