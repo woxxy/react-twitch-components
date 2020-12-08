@@ -8,14 +8,15 @@ export type TwitchApiStatus =
 export interface TwitchUser {
   id: string;
   login: string;
-  displayName: string;
-  type: string;
-  broadcasterType: '' | 'affiliate' | 'partner';
+  display_name: string;
+  type: 'staff' | 'admin' | 'global_mod' | '';
+  broadcaster_type: '' | 'affiliate' | 'partner';
   description: string;
-  profileImageUrl: string;
-  offlineImageUrl: string;
-  viewCount: number;
+  profile_image_url: string;
+  offline_image_url: string;
+  view_count: number;
   email: string;
+  created_at: string;
 }
 
 export interface TwitchPagination {
@@ -23,35 +24,38 @@ export interface TwitchPagination {
 }
 
 export interface TwitchUsersFollows {
-  fromId: string;
-  fromName: string;
-  toId: string;
-  toName: string;
-  followedAt: string;
+  from_id: string;
+  from_name: string;
+  to_id: string;
+  to_name: string;
+  followed_at: string;
 }
 
+// https://dev.twitch.tv/docs/api/reference#get-users
 export interface TwitchUsersResponse {
-  data: TwitchUser[];
+  data: readonly TwitchUser[];
 }
 
+// https://dev.twitch.tv/docs/api/reference#get-users-follows
 export interface TwitchUsersFollowsResponse {
   total: number;
-  data: TwitchUsersFollows[];
+  data: readonly TwitchUsersFollows[];
   pagination: TwitchPagination;
 }
 
 interface TwitchBroadcasterSubscriber {
-  broadcasterId: string;
-  broadcasterName: string;
-  isGift: boolean;
+  broadcaster_id: string;
+  broadcaster_name: string;
+  is_gift: boolean;
   tier: '1000' | '2000' | '3000';
-  planName: string;
-  userId: string;
-  userName: string;
+  plan_name: string;
+  user_id: string;
+  user_name: string;
 }
 
+// https://dev.twitch.tv/docs/api/reference#get-broadcaster-subscriptions
 export interface TwitchBroadcasterSubscriptionsResponse {
-  data: TwitchBroadcasterSubscriber[];
+  data: readonly TwitchBroadcasterSubscriber[];
   pagination: TwitchPagination;
 }
 

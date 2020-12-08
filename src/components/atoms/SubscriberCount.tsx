@@ -1,19 +1,6 @@
-import { useTwitchApi } from '../../hooks/useTwitchApi';
-import { TwitchBroadcasterSubscriptionsResponse } from '../../interfaces';
-import { useTwitchCurrentUser } from '../../hooks/useTwitchCurrentUser';
+import { useTwitchSubscriptions } from '../../hooks/twitch';
 
 export const SubscriberCount = () => {
-  const { currentUser } = useTwitchCurrentUser();
-
-  const [, result] = useTwitchApi<TwitchBroadcasterSubscriptionsResponse>(
-    'subscriptions',
-    { broadcasterId: currentUser.id },
-    [currentUser]
-  );
-
-  if (!result) {
-    return null;
-  }
-
-  return <>{result.data.length}</>;
+  const { data } = useTwitchSubscriptions();
+  return <>{data?.data.length}</>;
 };

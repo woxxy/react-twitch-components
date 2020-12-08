@@ -2,5 +2,5 @@ import { useTwitchCurrentUser } from '../../hooks/useTwitchCurrentUser';
 
 export const UserDisplayName = () => {
   const { currentUser } = useTwitchCurrentUser();
-  return <>{currentUser.displayName}</>;
+  return <>{currentUser.display_name}</>;
 };
