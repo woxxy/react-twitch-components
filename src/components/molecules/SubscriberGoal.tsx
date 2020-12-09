@@ -1,4 +1,4 @@
-import { useTwitchSubscriptions } from '../../hooks/twitch';
+import { useTwitchSubscriptions } from '../../hooks';
 import { LoadingBarClassNames, LoadingBar } from './internal/LoadingBar';
 
 interface SubscriberGoalProps {
