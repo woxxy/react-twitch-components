@@ -7,9 +7,6 @@
     "@emotion/css": "^11.0.0",
     "@emotion/react": "^11.1.2",
     "@emotion/styled": "^11.0.0",
-    "axios": "^0.21.0",
-    "axios-case-converter": "^0.6.0",
-    "immer": "^8.0.0",
     "swr": "^0.3.9",
     "webfontloader": "^1.6.28"
   },
