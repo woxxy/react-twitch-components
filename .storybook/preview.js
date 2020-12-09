@@ -1,5 +1,4 @@
 import { TwitchContext } from '../src/components/TwitchContext';
-import React from 'react';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
