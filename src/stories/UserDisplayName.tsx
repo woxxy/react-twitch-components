@@ -1,10 +1,5 @@
-import { TwitchProvider } from '../components/TwitchProvider';
-import { UserDisplayName } from '../components/atoms/UserDisplayName';
+import { UserDisplayName } from '../components/atoms';
 
 export const UserDisplayNameStory = () => {
-  return (
-    <TwitchProvider>
-      <UserDisplayName />
-    </TwitchProvider>
-  );
+  return <UserDisplayName />;
 };

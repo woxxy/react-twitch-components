@@ -47,6 +47,8 @@ interface TwitchBroadcasterSubscriber {
   broadcaster_id: string;
   broadcaster_name: string;
   is_gift: boolean;
+  gifter_id: string;
+  gifter_name: string;
   tier: '1000' | '2000' | '3000';
   plan_name: string;
   user_id: string;
