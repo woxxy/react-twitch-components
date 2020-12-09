@@ -1,4 +1,4 @@
-import { useTwitchFollowers } from '../../hooks/twitch';
+import { useTwitchFollowers } from '../../hooks';
 
 export const FollowerCount = () => {
   const { data } = useTwitchFollowers();

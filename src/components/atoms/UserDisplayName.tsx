@@ -1,4 +1,4 @@
-import { useTwitchCurrentUser } from '../../hooks/twitch';
+import { useTwitchCurrentUser } from '../../hooks';
 
 export const UserDisplayName = () => {
   const currentUser = useTwitchCurrentUser();
