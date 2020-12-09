@@ -1,7 +1,7 @@
 import { useTwitchSubscriptions } from '../../hooks/twitch';
 import { LoadingBarClassNames, LoadingBar } from './internal/LoadingBar';
 
-export interface SubscriberGoalProps {
+interface SubscriberGoalProps {
   goal: number;
   classNames?: LoadingBarClassNames;
 }

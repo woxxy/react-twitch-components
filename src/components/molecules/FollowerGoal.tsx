@@ -1,7 +1,7 @@
 import { useTwitchFollowers } from '../../hooks/twitch';
 import { LoadingBarClassNames, LoadingBar } from './internal/LoadingBar';
 
-export interface FollowerGoalProps {
+interface FollowerGoalProps {
   goal: number;
   classNames?: LoadingBarClassNames;
 }
