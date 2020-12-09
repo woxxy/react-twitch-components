@@ -10,7 +10,7 @@ export default {
 } as Meta;
 
 const Template: Story = () => {
-  mock.restore().mock('*', users.me);
+  mock.restore().mock('${TWITCH_API_ENDPOINT}users', users.me);
   return <UserDisplayNameStory />;
 };
 
