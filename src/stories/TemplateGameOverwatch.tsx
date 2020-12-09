@@ -1,6 +1,6 @@
 import './button.css';
 import { TwitchProvider } from '../components/TwitchProvider';
-import { TwitchWrapper } from '../template/TwitchWrapper';
+import { TwitchWrapper } from '../components/templates/TwitchWrapper';
 import {
   OverwatchCamera,
   OverwatchUltimate,
@@ -9,15 +9,17 @@ import {
 } from '../components/templates/games/Overwatch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitch, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { UserDisplayName } from '../components/atoms/UserDisplayName';
 import {
   faCrown,
   faTicketAlt,
   faUserFriends,
   faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
-import { LatestFollower } from '../components/atoms/LatestFollower';
-import { LatestSubscriber } from '../components/atoms/LatestSubscriber';
+import {
+  LatestFollower,
+  LatestSubscriber,
+  UserDisplayName,
+} from '../components/atoms';
 
 export const TemplateGameOverwatchStory = () => {
   return (
