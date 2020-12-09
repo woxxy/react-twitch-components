@@ -1,4 +1,4 @@
-import { useTwitchFollowers } from '../../hooks/twitch';
+import { useTwitchFollowers } from '../../hooks';
 
 interface LatestFollowerProps {
   indexFromLatest?: number;

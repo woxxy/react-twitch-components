@@ -1,4 +1,4 @@
-import { useTwitchSubscriptions } from '../../hooks/twitch';
+import { useTwitchSubscriptions } from '../../hooks';
 
 export const LatestSubscriber = () => {
   const { data } = useTwitchSubscriptions();
