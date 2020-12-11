@@ -1,6 +1,5 @@
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
-import mock, { users } from './mock';
 import { UserDisplayName } from '../components/atoms';
 
 export default {
@@ -10,7 +9,6 @@ export default {
 } as Meta;
 
 const Template: Story = () => {
-  mock.restore().mock('${TWITCH_API_ENDPOINT}users', users.me);
   return <UserDisplayName />;
 };
 
