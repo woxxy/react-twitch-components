@@ -17,5 +17,8 @@
     ["@babel/react", { "runtime": "automatic" }],
     "@babel/typescript"
   ],
-  "plugins": [["@babel/transform-runtime", { "useESModules": true }]]
+  "plugins": [
+    ["@babel/transform-runtime", { "useESModules": true }],
+    ["@emotion", { "sourceMap": false, "autoLabel": "never" }]
+  ]
 }
