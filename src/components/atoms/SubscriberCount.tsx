@@ -1,6 +1,6 @@
-import { useTwitchSubscriptions } from '../../hooks';
+import { useTwitchLegacySubscriptions } from '../../hooks/useTwitchLegacySubscriptions';
 
 export const SubscriberCount = () => {
-  const { data } = useTwitchSubscriptions();
-  return <>{data?.data.length}</>;
+  const { data } = useTwitchLegacySubscriptions();
+  return <>{data?._total}</>;
 };
