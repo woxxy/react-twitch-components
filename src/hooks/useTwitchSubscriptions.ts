@@ -14,7 +14,7 @@ interface TwitchBroadcasterSubscriber {
   user_name: string;
 }
 
-interface TwitchBroadcasterSubscriptionsResponse {
+export interface TwitchBroadcasterSubscriptionsResponse {
   data: readonly TwitchBroadcasterSubscriber[];
   pagination: TwitchPagination;
 }

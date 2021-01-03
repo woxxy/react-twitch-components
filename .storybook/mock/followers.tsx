@@ -1,9 +1,6 @@
-import { useTwitchFollowers } from '../../lib/hooks';
+import { TwitchUsersFollowsResponse } from '../../src/hooks';
 
-const followers: Record<
-  string,
-  Required<ReturnType<typeof useTwitchFollowers>>['data']
-> = {
+const followers: Record<string, TwitchUsersFollowsResponse> = {
   me: {
     total: 76,
     data: [

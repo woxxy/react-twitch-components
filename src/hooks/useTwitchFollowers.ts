@@ -10,7 +10,7 @@ interface TwitchUsersFollows {
   followed_at: string;
 }
 
-interface TwitchUsersFollowsResponse {
+export interface TwitchUsersFollowsResponse {
   total: number;
   data: readonly TwitchUsersFollows[];
   pagination: TwitchPagination;
