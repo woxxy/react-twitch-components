@@ -2,5 +2,5 @@ import { useTwitchLegacySubscriptions } from '../../hooks/useTwitchLegacySubscri
 
 export const LatestSubscriber = () => {
   const { data } = useTwitchLegacySubscriptions();
-  return <>{data?.subscriptions[0].user.display_name}</>;
+  return <>{data?.subscriptions[0]?.user.display_name}</>;
 };
