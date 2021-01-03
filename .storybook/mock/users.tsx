@@ -1,6 +1,9 @@
-import { TwitchUsersResponse } from '../../interfaces';
+import { useTwitchUsers } from '../../src/hooks';
 
-const users: Record<string, TwitchUsersResponse> = {
+const users: Record<
+  string,
+  Required<ReturnType<typeof useTwitchUsers>>['data']
+> = {
   me: {
     data: [
       {

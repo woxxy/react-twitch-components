@@ -1,6 +1,9 @@
-import { TwitchBroadcasterSubscriptionsResponse } from '../../interfaces';
+import { useTwitchSubscriptions } from '../../src/hooks';
 
-const subscriber: Record<string, TwitchBroadcasterSubscriptionsResponse> = {
+const subscriber: Record<
+  string,
+  Required<ReturnType<typeof useTwitchSubscriptions>>['data']
+> = {
   me: {
     data: [
       {

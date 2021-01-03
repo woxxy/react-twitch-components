@@ -1,4 +1,3 @@
-import './button.css';
 import { TwitchProvider } from '../components/TwitchProvider';
 import { TwitchWrapper } from '../components/templates/TwitchWrapper';
 import {
