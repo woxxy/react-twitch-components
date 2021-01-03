@@ -1,4 +1,4 @@
-import { TwitchBroadcasterSubscriptionsResponse } from '../../interfaces';
+import { TwitchBroadcasterSubscriptionsResponse } from '../../src/hooks';
 
 const subscriber: Record<string, TwitchBroadcasterSubscriptionsResponse> = {
   me: {

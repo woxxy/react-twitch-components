@@ -1,4 +1,4 @@
-import { TwitchUsersResponse } from '../../interfaces';
+import { TwitchUsersResponse } from '../../src/hooks';
 
 const users: Record<string, TwitchUsersResponse> = {
   me: {

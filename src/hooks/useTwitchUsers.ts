@@ -14,7 +14,7 @@ export interface TwitchUser {
   created_at: string;
 }
 
-interface TwitchUsersResponse {
+export interface TwitchUsersResponse {
   data: readonly TwitchUser[];
 }
 

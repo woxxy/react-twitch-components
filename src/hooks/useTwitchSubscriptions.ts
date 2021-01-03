@@ -6,13 +6,15 @@ interface TwitchBroadcasterSubscriber {
   broadcaster_id: string;
   broadcaster_name: string;
   is_gift: boolean;
+  gifter_name: string; // not declared in docs
+  gifter_id: string; // not declared in docs
   tier: '1000' | '2000' | '3000';
   plan_name: string;
   user_id: string;
   user_name: string;
 }
 
-interface TwitchBroadcasterSubscriptionsResponse {
+export interface TwitchBroadcasterSubscriptionsResponse {
   data: readonly TwitchBroadcasterSubscriber[];
   pagination: TwitchPagination;
 }
